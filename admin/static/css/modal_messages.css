@@ -1,0 +1,57 @@
+.modal {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+    display: flex;
+    justify-self: center;
+    align-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.modal-message {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Estilos para diferentes tipos de mensagem */
+.modal-message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.modal-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

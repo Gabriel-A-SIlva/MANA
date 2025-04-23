@@ -1,0 +1,142 @@
+/* Estilos principais */
+.fundo_login {
+    width: 100%;
+    height: 100vh;
+    background: #f9f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.conteiner_login {
+    width: 90%;
+    max-width: 700px;
+    height: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.div_img img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.campo_formLog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.campo_formLog label {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(62, 65, 62);
+}
+
+.campo_formLog input {
+    border: none;
+    border-radius: 20px;
+    background: #e6e6fa;
+    height: 40px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.conteiner_btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn_login,
+a {
+    width: 100%;
+    max-width: 200px;
+    height: 45px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(57, 57, 168);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid rgb(57, 57, 168);
+}
+
+.btn_login:hover,
+a:hover {
+    background: rgb(57, 57, 168);
+    color: #f9f8f8;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .conteiner_login {
+        width: 85%;
+    }
+    .campo_formLog input {
+        height: 35px;
+        font-size: 14px;
+    }
+    .btn_login,
+    a {
+        font-size: 13px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .conteiner_login {
+        width: 90%;
+    }
+    .campo_formLog label {
+        font-size: 14px;
+    }
+    .campo_formLog input {
+        height: 35px;
+        font-size: 14px;
+    }
+    .btn_login,
+    a {
+        font-size: 12px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 360px) {
+    .conteiner_login {
+        width: 95%;
+        padding: 15px;
+    }
+    .campo_formLog label {
+        font-size: 12px;
+    }
+    .campo_formLog input {
+        height: 30px;
+        font-size: 12px;
+    }
+    .btn_login,
+    a {
+        font-size: 11px;
+        height: 35px;
+    }
+}

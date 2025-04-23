@@ -1,0 +1,44 @@
+.section_cadastros_cong {
+    width: 100%;
+    height: 100vh;
+}
+.fundo_lista {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+}
+.div_header_btn {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.header_lista {
+    width: 100%;
+    display: flex;
+    padding: 80px 150px;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+}
+.header_lista button {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #fc0000;
+    color: #fff;
+}
+.header_lista button:hover {
+    background: #fff;
+    color: #fc0000;
+}
+.header_lista i {
+    font-size: 32px;
+    font-weight: 600;
+}

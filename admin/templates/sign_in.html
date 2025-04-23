@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'css/auth/sign_in.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/modal_messages.css' %}" />
+    </head>
+    <body>
+        <!-- MODAL DE MENSAGEM -->
+        {% if messages %}
+        <div id="custom-modal" class="modal">
+            <div class="modal-content">
+                {% for message in messages %}
+                <p class="modal-message {{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <!-- FIM DO MODAL -->
+        <div class="fundo_login">
+            <form
+                action="{% url 'sign_in_admin' %}"
+                method="POST"
+                class="conteiner_login"
+            >
+                {% csrf_token %}
+                <div class="div_img">
+                    <img src="{% static 'img/logo.jpg' %}" alt="Logo" />
+                </div>
+                <div class="campo_formLog">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" />
+                </div>
+                <div class="campo_formLog">
+                    <label for="senha_acesso">Senha de Acesso</label>
+                    <input
+                        type="password"
+                        name="senha_acesso"
+                        id="senha_acesso"
+                    />
+                </div>
+                <div class="conteiner_btn">
+                    <button class="btn_login" type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+        <script>
+            function mostrarModalTemporario(modalId, duracao = 2000) {
+                window.addEventListener("load", () => {
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        setTimeout(() => {
+                            modal.style.transition = "opacity 0.5s ease";
+                            modal.style.opacity = 0;
+                            setTimeout(() => {
+                                modal.style.display = "none";
+                            }, 500); // Aguarda a transição
+                        }, duracao);
+                    }
+                });
+            }
+            mostrarModalTemporario("custom-modal");
+        </script>
+    </body>
+</html>

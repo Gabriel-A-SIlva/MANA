@@ -1,0 +1,52 @@
+table {
+    width: 95%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    border: 1px solid #fff;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+thead {
+    background-color: #fc0000;
+    color: white;
+    font-weight: bold;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    cursor: pointer;
+}
+.btn_row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.btn {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.edit-btn {
+    background-color: #f0ad4e;
+    color: white;
+}
+.delete-btn {
+    background-color: #d9534f;
+    color: white;
+}
