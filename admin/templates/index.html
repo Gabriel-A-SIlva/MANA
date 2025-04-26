@@ -18,6 +18,178 @@
         />
         <link rel="stylesheet" href="{% static 'css/home/central.css' %}" />
         <link rel="stylesheet" href="{% static 'css/modal_messages.css' %}" />
+        <style>
+            .windowAll {
+                width: 100%;
+                height: 100vh;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 100px;
+            }
+            .conteiner_btn_close {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+            .btn_close {
+                width: 30px;
+                height: 30px;
+                border: none;
+                border-radius: 50%;
+                background: #f4f4f9;
+                color: #115d89;
+                font-size: 14pt;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .btn_close:hover {
+                background: #115d89;
+                color: #f4f4f9;
+            }
+            /* Ajuste no tamanho das janelas */
+            .fundo_conteiner_form {
+                width: 90%;
+                max-width: 600px;
+                height: auto;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                background: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .fundo_conteiner_form h1 {
+                font-size: 18pt;
+                text-align: center;
+                margin-bottom: 10px;
+                color: #115d89;
+            }
+
+            .conteiner_form form {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .campo_form {
+                display: flex;
+                flex-direction: column;
+                background: #f4f4f9;
+                padding: 8px;
+                border-radius: 8px;
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .campo_form label {
+                font-size: 11pt;
+                font-weight: bold;
+                color: #115d89;
+                margin-bottom: 4px;
+            }
+
+            .campo_form input,
+            .campo_form select,
+            p {
+                font-size: 13px;
+                padding: 5px;
+                border-radius: 6px;
+                border: none;
+                background: #e6e6fa;
+            }
+
+            .conteiner_btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .btn_form {
+                width: 100%;
+                max-width: 180px;
+                height: 35px;
+                border: none;
+                border-radius: 15px;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                background-color: #e0e0ff;
+                color: #3939a8;
+                transition: 0.3s;
+            }
+
+            .btn_form:hover {
+                background: #3939a8;
+                color: #fff;
+            }
+
+            /* Responsividade */
+            @media screen and (max-width: 768px) {
+                .conteiner_form_atualizacao {
+                    width: 95%;
+                    padding: 10px;
+                }
+
+                .fundo_conteiner_form h1 {
+                    font-size: 16pt;
+                }
+
+                .campo_form label {
+                    font-size: 10pt;
+                }
+
+                .campo_form input,
+                .campo_form select {
+                    font-size: 12px;
+                    padding: 4px;
+                }
+
+                .btn_form {
+                    max-width: 150px;
+                    height: 32px;
+                    font-size: 12px;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                .conteiner_form_atualizacao {
+                    width: 100%;
+                    height: 100%;
+                    padding: 2px;
+                    border-radius: 5px;
+                }
+
+                .fundo_conteiner_form h1 {
+                    font-size: 14pt;
+                }
+
+                .campo_form {
+                    padding: 6px;
+                }
+
+                .campo_form label {
+                    font-size: 9pt;
+                }
+
+                .campo_form input,
+                .campo_form select {
+                    font-size: 11px;
+                    padding: 3px;
+                }
+
+                .btn_form {
+                    max-width: 130px;
+                    height: 30px;
+                    font-size: 11px;
+                    border-radius: 10px;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- MODAL DE MENSAGEM -->
@@ -37,50 +209,55 @@
             </div>
             <div class="buttonsNavPage">
                 <div
-                    class="sidebar_btns_sections sidebar_toggle_sections_btns"
+                    class="sidebar_btns_sections btn_open"
                     data-target="section_proteinas_main"
                 >
                     <i class="fa-solid fa-drumstick-bite"></i>
                     <h4>Proteinas</h4>
                 </div>
                 <div
-                    class="sidebar_btns_sections sidebar_toggle_sections_btns"
+                    class="sidebar_btns_sections btn_open"
                     data-target="section_arrozes_main"
                 >
                     <i class="fa-solid fa-bowl-rice"></i>
                     <h4>Arrozes</h4>
                 </div>
                 <div
-                    class="sidebar_btns_sections sidebar_toggle_sections_btns"
+                    class="sidebar_btns_sections btn_open"
                     data-target="section_saladas_main"
                 >
                     <i class="fa-solid fa-leaf"></i>
                     <h4>Saladas</h4>
                 </div>
                 <div
-                    class="sidebar_btns_sections sidebar_toggle_sections_btns"
+                    class="sidebar_btns_sections btn_open"
                     data-target="section_complementos_main"
                 >
                     <i class="fa-solid fa-bread-slice"></i>
                     <h4>Complementos</h4>
                 </div>
                 <div
-                    class="sidebar_btns_sections sidebar_toggle_sections_btns"
+                    class="sidebar_btns_sections btn_open"
                     data-target="section_bebidas_main"
                 >
                     <i class="fa-solid fa-glass-water"></i>
                     <h4>Bebidas</h4>
                 </div>
                 <div
-                    class="sidebar_btns_sections sidebar_toggle_sections_btns"
+                    class="sidebar_btns_sections btn_open"
                     data-target="section_sobremesas_main"
                 >
                     <i class="fa-solid fa-birthday-cake"></i>
                     <h4>Sobremesas</h4>
                 </div>
                 <div class="sidebar_btns_sections">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <h4>Logout</h4>
+                    <a
+                        href="{% url 'logout_view' %}"
+                        style="text-decoration: none; color: inherit"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <h4>Logout</h4>
+                    </a>
                 </div>
             </div>
         </div>
@@ -91,14 +268,17 @@
                     id="section_proteinas_main"
                     style="display: none"
                 >
-                    <div class="fundo_lista">
+                    <div class="fundo_lista" id="lista_proteinas">
                         <div class="header_lista">
                             <h1>Proteinas de</h1>
                             <div class="div_header_btn">
                                 <button>
                                     <i class="fa-solid fa-print"></i>
                                 </button>
-                                <button class="btn_open_form">
+                                <button
+                                    class="btn_open_form"
+                                    id="btn_windowAll_proteinas"
+                                >
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -113,20 +293,69 @@
                             <tbody></tbody>
                         </table>
                     </div>
+                    <div
+                        class="windowAll"
+                        id="windowAll_proteinas"
+                        style="display: none"
+                    >
+                        <div class="fundo_conteiner_form">
+                            <div class="conteiner_form">
+                                <div class="conteiner_btn_close">
+                                    <button
+                                        id="btn_close_btn_windowAll_proteinas"
+                                        class="btn_close"
+                                    >
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                                <h1>Modifique aqui</h1>
+                                <div class="conteiner_form">
+                                    <form
+                                        action="{% url 'create_proteinas' %}"
+                                        method="POST"
+                                    >
+                                        {% csrf_token %}
+                                        <div class="campo_form">
+                                            <label for="nome_proteina"
+                                                >Nome</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="nome_proteina"
+                                                id="nome_proteina"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="conteiner_btn">
+                                            <button
+                                                class="campo_form"
+                                                type="submit"
+                                            >
+                                                Enviar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div
                     class="section_lista"
                     id="section_arrozes_main"
                     style="display: none"
                 >
-                    <div class="fundo_lista">
+                    <div class="fundo_lista" id="lista_arrozes">
                         <div class="header_lista">
                             <h1>Arrozes de</h1>
                             <div class="div_header_btn">
                                 <button>
                                     <i class="fa-solid fa-print"></i>
                                 </button>
-                                <button class="btn_open_form">
+                                <button
+                                    class="btn_open_form"
+                                    id="btn_windowAll_arrozes"
+                                >
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -141,20 +370,67 @@
                             <tbody></tbody>
                         </table>
                     </div>
+                    <div
+                        class="windowAll"
+                        id="windowAll_arrozes"
+                        style="display: none"
+                    >
+                        <div class="fundo_conteiner_form">
+                            <div class="conteiner_form">
+                                <div class="conteiner_btn_close">
+                                    <button
+                                        id="btn_close_btn_windowAll_arrozes"
+                                        class="btn_close"
+                                    >
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                                <h1>Modifique aqui</h1>
+                                <div class="conteiner_form">
+                                    <form
+                                        action="{% url 'create_arrozes' %}"
+                                        method="POST"
+                                    >
+                                        {% csrf_token %}
+                                        <div class="campo_form">
+                                            <label for="nome_arroz">Nome</label>
+                                            <input
+                                                type="text"
+                                                name="nome_arroz"
+                                                id="nome_arroz"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="conteiner_btn">
+                                            <button
+                                                class="campo_form"
+                                                type="submit"
+                                            >
+                                                Enviar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div
                     class="section_lista"
                     id="section_saladas_main"
                     style="display: none"
                 >
-                    <div class="fundo_lista">
+                    <div class="fundo_lista" id="lista_saladas">
                         <div class="header_lista">
                             <h1>Saladas de</h1>
                             <div class="div_header_btn">
                                 <button>
                                     <i class="fa-solid fa-print"></i>
                                 </button>
-                                <button class="btn_open_form">
+                                <button
+                                    class="btn_open_form"
+                                    id="btn_windowAll_saladas"
+                                >
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -169,20 +445,69 @@
                             <tbody></tbody>
                         </table>
                     </div>
+                    <div
+                        class="windowAll"
+                        id="windowAll_saladas"
+                        style="display: none"
+                    >
+                        <div class="fundo_conteiner_form">
+                            <div class="conteiner_form">
+                                <div class="conteiner_btn_close">
+                                    <button
+                                        id="btn_close_btn_windowAll_saladas"
+                                        class="btn_close"
+                                    >
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                                <h1>Modifique aqui</h1>
+                                <div class="conteiner_form">
+                                    <form
+                                        action="{% url 'create_saladas' %}"
+                                        method="POST"
+                                    >
+                                        {% csrf_token %}
+                                        <div class="campo_form">
+                                            <label for="nome_salada"
+                                                >Nome</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="nome_salada"
+                                                id="nome_salada"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="conteiner_btn">
+                                            <button
+                                                class="campo_form"
+                                                type="submit"
+                                            >
+                                                Enviar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div
                     class="section_lista"
                     id="section_complementos_main"
                     style="display: none"
                 >
-                    <div class="fundo_lista">
+                    <div class="fundo_lista" id="lista_complementos">
                         <div class="header_lista">
                             <h1>Complementos de</h1>
                             <div class="div_header_btn">
                                 <button>
                                     <i class="fa-solid fa-print"></i>
                                 </button>
-                                <button class="btn_open_form">
+                                <button
+                                    class="btn_open_form"
+                                    id="btn_windowAll_complementos"
+                                >
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
@@ -196,6 +521,52 @@
                             </thead>
                             <tbody></tbody>
                         </table>
+                    </div>
+                    <div
+                        class="windowAll"
+                        id="windowAll_complementos"
+                        style="display: none"
+                    >
+                        <div class="fundo_conteiner_form">
+                            <div class="conteiner_form">
+                                <div class="conteiner_btn_close">
+                                    <button
+                                        id="btn_close_btn_windowAll_complementos"
+                                        class="btn_close"
+                                    >
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                                <h1>Modifique aqui</h1>
+                                <div class="conteiner_form">
+                                    <form
+                                        action="{% url 'create_complementos' %}"
+                                        method="POST"
+                                    >
+                                        {% csrf_token %}
+                                        <div class="campo_form">
+                                            <label for="nome_salada"
+                                                >Nome</label
+                                            >
+                                            <input
+                                                type="text"
+                                                name="nome_salada"
+                                                id="nome_salada"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="conteiner_btn">
+                                            <button
+                                                class="campo_form"
+                                                type="submit"
+                                            >
+                                                Enviar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div
@@ -258,10 +629,378 @@
                 </div>
             </div>
         </div>
+
         <script>
-            const buttons = document.querySelectorAll(
-                ".sidebar_toggle_sections_btns"
-            );
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch("/admin/saladas/read_saladas/")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const tabela = document.querySelector(
+                            "#tabela_saladas tbody"
+                        );
+
+                        data.forEach((salada) => {
+                            const linha = document.createElement("tr");
+                            linha.id = `salada-${salada.id}`;
+                            linha.innerHTML = `
+                                <td data-editavel>${salada.nome}</td>
+                                <td>
+                                    <button class="btn edit-btn" onclick="editarsalada(${salada.id})">📝 Editar</button>
+                                    <button class="btn delete-btn" onclick="deletarsalada(${salada.id})">🗑️ Deletar</button>
+                                </td>
+                            `;
+                            tabela.appendChild(linha);
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Erro ao carregar as saladas:", error);
+                    });
+
+                window.editarsalada = function (id) {
+                    const linha = document.querySelector(`#salada-${id}`);
+                    const celulas = linha.querySelectorAll("td[data-editavel]");
+                    const botao = linha.querySelector(".edit-btn");
+                    const editando = botao.textContent === "💾 Salvar";
+
+                    celulas.forEach((celula) => {
+                        celula.contentEditable = !editando;
+                        celula.style.backgroundColor = !editando
+                            ? "#f0f0f0"
+                            : "";
+                    });
+
+                    botao.textContent = editando ? "📝 Editar" : "💾 Salvar";
+
+                    if (editando) {
+                        const dadosAtualizados = {
+                            nome: celulas[0].innerText.trim(),
+                        };
+
+                        fetch(`/admin/saladas/update_saladas/${id}/`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-CSRFToken": getCSRFToken(),
+                            },
+                            body: JSON.stringify(dadosAtualizados),
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.success) {
+                                    alert("Salada atualizada com sucesso!");
+                                } else {
+                                    alert("Erro ao atualizar: " + data.message);
+                                }
+                            })
+                            .catch((error) =>
+                                console.error(
+                                    "Erro ao atualizar salada:",
+                                    error
+                                )
+                            );
+                    }
+                };
+
+                window.deletarsalada = function (id) {
+                    if (
+                        confirm("Tem certeza que deseja excluir esta salada?")
+                    ) {
+                        fetch(`/admin/saladas/delete_saladas/${id}/`, {
+                            method: "DELETE",
+                            headers: {
+                                "X-CSRFToken": getCSRFToken(),
+                                "Content-Type": "application/json",
+                            },
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.success) {
+                                    alert(data.message);
+                                    document
+                                        .querySelector(`#salada-${id}`)
+                                        .remove(); // remove só a linha
+                                } else {
+                                    alert("Erro: " + data.message);
+                                }
+                            })
+                            .catch((error) =>
+                                console.error("Erro ao excluir salada:", error)
+                            );
+                    }
+                };
+
+                function getCSRFToken() {
+                    return document.querySelector(
+                        "[name=csrfmiddlewaretoken]"
+                    ).value;
+                }
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch("/admin/arrozes/read_arrozes/")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const tabela = document.querySelector(
+                            "#tabela_arrozes tbody"
+                        );
+
+                        data.forEach((arroz) => {
+                            const linha = document.createElement("tr");
+                            linha.id = `arroz-${arroz.id}`;
+                            linha.innerHTML = `
+                                <td data-editavel>${arroz.nome}</td>
+                                <td>
+                                    <button class="btn edit-btn" onclick="editararroz(${arroz.id})">📝 Editar</button>
+                                    <button class="btn delete-btn" onclick="deletararroz(${arroz.id})">🗑️ Deletar</button>
+                                </td>
+                            `;
+                            tabela.appendChild(linha);
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Erro ao carregar os arrozes:", error);
+                    });
+
+                window.editararroz = function (id) {
+                    const linha = document.querySelector(`#arroz-${id}`);
+                    const celulas = linha.querySelectorAll("td[data-editavel]");
+                    const botao = linha.querySelector(".edit-btn");
+                    const editando = botao.textContent === "💾 Salvar";
+
+                    celulas.forEach((celula) => {
+                        celula.contentEditable = !editando;
+                        celula.style.backgroundColor = !editando
+                            ? "#f0f0f0"
+                            : "";
+                    });
+
+                    botao.textContent = editando ? "📝 Editar" : "💾 Salvar";
+
+                    if (editando) {
+                        const dadosAtualizados = {
+                            nome: celulas[0].innerText.trim(),
+                        };
+
+                        fetch(`/admin/arrozes/update_arrozes/${id}/`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-CSRFToken": getCSRFToken(),
+                            },
+                            body: JSON.stringify(dadosAtualizados),
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.success) {
+                                    alert("Arroz atualizado com sucesso!");
+                                } else {
+                                    alert("Erro ao atualizar: " + data.message);
+                                }
+                            })
+                            .catch((error) =>
+                                console.error("Erro ao atualizar arroz:", error)
+                            );
+                    }
+                };
+
+                window.deletararroz = function (id) {
+                    if (confirm("Tem certeza que deseja excluir este arroz?")) {
+                        fetch(`/admin/arrozes/delete_arrozes/${id}/`, {
+                            method: "DELETE",
+                            headers: {
+                                "X-CSRFToken": getCSRFToken(),
+                                "Content-Type": "application/json",
+                            },
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.success) {
+                                    alert(data.message);
+                                    document
+                                        .querySelector(`#arroz-${id}`)
+                                        .remove(); // remove só a linha
+                                } else {
+                                    alert("Erro: " + data.message);
+                                }
+                            })
+                            .catch((error) =>
+                                console.error("Erro ao excluir arroz:", error)
+                            );
+                    }
+                };
+
+                function getCSRFToken() {
+                    return document.querySelector(
+                        "[name=csrfmiddlewaretoken]"
+                    ).value;
+                }
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch("/admin/proteinas/read_proteinas/")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const tabela = document.querySelector(
+                            "#tabela_proteinas tbody"
+                        );
+
+                        data.forEach((proteina) => {
+                            const linha = document.createElement("tr");
+                            linha.id = `proteina-${proteina.id}`;
+                            linha.innerHTML = `
+                                <td data-editavel>${proteina.nome}</td>
+                                <td>
+                                    <button class="btn edit-btn" onclick="editarProteina(${proteina.id})">📝 Editar</button>
+                                    <button class="btn delete-btn" onclick="deletarProteina(${proteina.id})">🗑️ Deletar</button>
+                                </td>
+                            `;
+                            tabela.appendChild(linha);
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Erro ao carregar as proteínas:", error);
+                    });
+
+                window.editarProteina = function (id) {
+                    const linha = document.querySelector(`#proteina-${id}`);
+                    const celulas = linha.querySelectorAll("td[data-editavel]");
+                    const botao = linha.querySelector(".edit-btn");
+                    const editando = botao.textContent === "💾 Salvar";
+
+                    celulas.forEach((celula) => {
+                        celula.contentEditable = !editando;
+                        celula.style.backgroundColor = !editando
+                            ? "#f0f0f0"
+                            : "";
+                    });
+
+                    botao.textContent = editando ? "📝 Editar" : "💾 Salvar";
+
+                    if (editando) {
+                        const dadosAtualizados = {
+                            nome: celulas[0].innerText.trim(),
+                        };
+
+                        fetch(`/admin/proteinas/update_proteinas/${id}/`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-CSRFToken": getCSRFToken(),
+                            },
+                            body: JSON.stringify(dadosAtualizados),
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.success) {
+                                    alert("Proteína atualizada com sucesso!");
+                                } else {
+                                    alert("Erro ao atualizar: " + data.message);
+                                }
+                            })
+                            .catch((error) =>
+                                console.error(
+                                    "Erro ao atualizar proteína:",
+                                    error
+                                )
+                            );
+                    }
+                };
+
+                window.deletarProteina = function (id) {
+                    if (
+                        confirm("Tem certeza que deseja excluir esta proteína?")
+                    ) {
+                        fetch(`/admin/proteinas/delete_proteinas/${id}/`, {
+                            method: "DELETE",
+                            headers: {
+                                "X-CSRFToken": getCSRFToken(),
+                                "Content-Type": "application/json",
+                            },
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.success) {
+                                    alert(data.message);
+                                    document
+                                        .querySelector(`#proteina-${id}`)
+                                        .remove(); // remove só a linha
+                                } else {
+                                    alert("Erro: " + data.message);
+                                }
+                            })
+                            .catch((error) =>
+                                console.error(
+                                    "Erro ao excluir proteína:",
+                                    error
+                                )
+                            );
+                    }
+                };
+
+                function getCSRFToken() {
+                    return document.querySelector(
+                        "[name=csrfmiddlewaretoken]"
+                    ).value;
+                }
+            });
+        </script>
+
+        <script>
+            function toggleElements(hideSelector, showSelector) {
+                const elementToHide = document.querySelector(hideSelector);
+                const elementToShow = document.querySelector(showSelector);
+
+                if (elementToHide) elementToHide.style.display = "none";
+                if (elementToShow) elementToShow.style.display = "flex";
+            }
+            // formulario proteinas:
+            document
+                .querySelector("#btn_windowAll_proteinas")
+                ?.addEventListener("click", () => {
+                    toggleElements("#lista_proteinas", "#windowAll_proteinas");
+                });
+
+            document
+                .querySelector("#btn_close_btn_windowAll_proteinas")
+                ?.addEventListener("click", () => {
+                    toggleElements("#windowAll_proteinas", "#lista_proteinas");
+                });
+            // fim formulario proteinas
+
+            // formulario arrozes:
+            document
+                .querySelector("#btn_windowAll_arrozes")
+                ?.addEventListener("click", () => {
+                    toggleElements("#lista_arrozes", "#windowAll_arrozes");
+                });
+
+            document
+                .querySelector("#btn_close_btn_windowAll_arrozes")
+                ?.addEventListener("click", () => {
+                    toggleElements("#windowAll_arrozes", "#lista_arrozes");
+                });
+            // fim formulario arrozes
+
+            // formulario saladas:
+            document
+                .querySelector("#btn_windowAll_saladas")
+                ?.addEventListener("click", () => {
+                    toggleElements("#lista_saladas", "#windowAll_saladas");
+                });
+
+            document
+                .querySelector("#btn_close_btn_windowAll_saladas")
+                ?.addEventListener("click", () => {
+                    toggleElements("#windowAll_saladas", "#lista_saladas");
+                });
+            // fim formulario saladas
+        </script>
+        <script>
+            const buttons = document.querySelectorAll(".btn_open");
 
             let activeDiv = null;
 
